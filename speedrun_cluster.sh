@@ -9,6 +9,17 @@
 #      sbatch nanochat/speedrun_cluster.sh
 # =============================================================================
 
+# --- SLURM HEADER -----------------------------------------------------------
+#SBATCH --job-name=nanochat
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gres=gpu:8
+#SBATCH --time=06:00:00
+#SBATCH --output=nanochat_%j.log
+#SBATCH --error=nanochat_%j.err
+#SBATCH --partition=mi250
+#SBATCH --account=c1916309
+
 # --- PREP MODE: run from login node to download data + install deps ----------
 if [ "$1" = "--prep" ]; then
     echo "=== PREP MODE (run from login node with internet) ==="
@@ -36,18 +47,6 @@ if [ "$1" = "--prep" ]; then
     echo "=== PREP DONE. Now submit: sbatch nanochat/speedrun_cluster.sh ==="
     exit 0
 fi
-
-# --- SLURM HEADER -----------------------------------------------------------
-#SBATCH --job-name=nanochat
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --gres=gpu:8
-#SBATCH --time=06:00:00
-#SBATCH --output=nanochat_%j.log
-#SBATCH --error=nanochat_%j.err
-# Adapt partition name to your cluster:
-#SBATCH --partition=mi250
-#SBATCH --account=c1916309
 
 # --- ENV SETUP ---------------------------------------------------------------
 set -e
