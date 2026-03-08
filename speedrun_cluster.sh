@@ -46,8 +46,8 @@ fi
 #SBATCH --output=nanochat_%j.log
 #SBATCH --error=nanochat_%j.err
 # Adapt partition name to your cluster:
-# #SBATCH --partition=gpu
-# #SBATCH --account=c1916309
+#SBATCH --partition=mi250
+#SBATCH --account=c1916309
 
 # --- ENV SETUP ---------------------------------------------------------------
 set -e
