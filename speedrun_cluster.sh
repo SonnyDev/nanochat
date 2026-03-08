@@ -17,8 +17,9 @@
 #SBATCH --time=06:00:00
 #SBATCH --output=nanochat_%j.log
 #SBATCH --error=nanochat_%j.err
-#SBATCH --partition=mi250
+#SBATCH --constraint=MI250
 #SBATCH --account=c1916309
+#SBATCH --exclusive
 
 # --- PREP MODE: run from login node to download data + install deps ----------
 if [ "$1" = "--prep" ]; then
