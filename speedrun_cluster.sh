@@ -66,6 +66,9 @@ mkdir -p "$NANOCHAT_BASE_DIR"
 VENV_PATH="/lus/work/CT10/c1916309/smuhima/project_ocs/new_venv"
 source "$VENV_PATH/bin/activate"
 
+# Add nanochat deps installed in $HOME
+export PYTHONPATH="$HOME/nanochat_deps:$PYTHONPATH"
+
 # cd into nanochat dir
 cd "$(dirname "$0")"
 
