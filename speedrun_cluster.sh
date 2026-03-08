@@ -18,7 +18,7 @@ if [ "$1" = "--prep" ]; then
     mkdir -p "$NANOCHAT_BASE_DIR"
 
     # Use the shared venv that already has PyTorch ROCm
-    VENV_PATH="/lus/work/CT10/c1916309/SHARED/.venv_mars"
+    VENV_PATH="/lus/work/CT10/c1916309/smuhima/project_ocs/new_venv"
     source "$VENV_PATH/bin/activate"
 
     # Install nanochat Python deps (skip torch, already in venv)
@@ -63,7 +63,7 @@ unset ROCR_VISIBLE_DEVICES
 mkdir -p "$NANOCHAT_BASE_DIR"
 
 # Use the shared venv with PyTorch ROCm
-VENV_PATH="/lus/work/CT10/c1916309/SHARED/.venv_mars"
+VENV_PATH="/lus/work/CT10/c1916309/smuhima/project_ocs/new_venv"
 source "$VENV_PATH/bin/activate"
 
 # cd into nanochat dir
